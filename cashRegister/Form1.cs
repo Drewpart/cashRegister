@@ -45,30 +45,34 @@ namespace cashRegister
         private void calculateButton_Click(object sender, EventArgs e)
         {
 
-            int forces = Convert.ToInt32(airForceInput.Text);
-            double mags = Convert.ToDouble(airMagsInput.Text);
-            double jordans = Convert.ToDouble(jordansInput.Text);
+            try
+            {
+                int forces = Convert.ToInt32(airForceInput.Text);
+                double mags = Convert.ToDouble(airMagsInput.Text);
+                double jordans = Convert.ToDouble(jordansInput.Text);
 
-            double totalForce = forces * forcesPrice;
-            double totalMags = mags * magsPrice;
-            double totalJordans = jordans * jordansPrice;
-            double subTotal = totalForce + totalMags + totalJordans;
-            double taxrate = 0.13;
-            double total = subTotal * (1 + taxrate);
-            double taxAmmount = total - subTotal;
+                double totalForce = forces * forcesPrice;
+                double totalMags = mags * magsPrice;
+                double totalJordans = jordans * jordansPrice;
+                double subTotal = totalForce + totalMags + totalJordans;
+                double taxrate = 0.13;
+                double total = subTotal * (1 + taxrate);
+                double taxAmmount = total - subTotal;
 
-            // making it calculate the total and taxes
-            subTotalLabel.Text = $"Sub Total: {subTotal.ToString("0.00")}";
-            totalLabel.Text = $"Total: {total.ToString("0.00")}";
-            taxLabel.Text = $" Tax: {taxAmmount.ToString("0.00")}";
-            welcomeLabel.Text = $"ah, good choice!";
-            
-
-
-
+                // making it calculate the total and taxes
+                subTotalLabel.Text = $"Sub Total: {subTotal.ToString("0.00")}";
+                totalLabel.Text = $"Total: {total.ToString("0.00")}";
+                taxLabel.Text = $" Tax: {taxAmmount.ToString("0.00")}";
+                welcomeLabel.Text = $"ah, good choice!";
 
 
 
+
+            }
+            catch
+            {
+                welcomeLabel.Text = $"Please enter A whole number.";
+            }
         }
 
         private void changeButton_Click(object sender, EventArgs e)
