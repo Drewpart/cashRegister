@@ -111,8 +111,29 @@ namespace cashRegister
             double change = tendered - total;
 
             //printing the receipt
-            receiptLabel.Text = $"         Drews Shoes\n\n order number 5760\n september 29, 2021\n\n Air Forces x{forces}            @{forcesPrice}\n Air Mags x{mags}              @{magsPrice}\n Jordan 4's x{jordans}           @{jordansPrice}\n\n Sub Total:                  {subTotal}\n Tax:                           {taxAmmount.ToString("0.00")}\n Total:                         {total}\n\n Tendered:                  {tendered.ToString("0.00")}\n Change:                     {change.ToString("0.00")}\n\n Have A Great Day!\n Thank you for shopping.";
-            
+            receiptLabel.Text = $"         Drews Shoes\n\n order number 5760\n september 29, 2021\n\n Air Forces x{forces}            @{forcesPrice}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n Air Mags x{mags}              @{magsPrice}";
+            receiptLabel.Text += $"\n Jordan 4's x{jordans}           @{jordansPrice}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n\n Sub Total:                  {subTotal}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n Tax:                           {taxAmmount.ToString("0.00")}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n Total:                         {total}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n\n Tendered:                  {tendered.ToString("0.00")}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n Change:                     {change.ToString("0.00")}";
+            Refresh();
+            Thread.Sleep(10);
+            receiptLabel.Text += $"\n\n Have A Great Day!\n Thank you for shopping.";
         }
 
         private void yesButton_Click(object sender, EventArgs e)
@@ -133,7 +154,29 @@ namespace cashRegister
 
             // yes button. printing the receipt
             welcomeLabel.Text = $"okay, here you go! Have a great day";
-            receiptLabel.Text = $"         Drews Shoes\n\n order number 5760\n september 29, 2021\n\n Air Forces x{forces}            @{forcesPrice}\n Air Mags x{mags}              @{magsPrice}\n Jordan 4's x{jordans}           @{jordansPrice}\n\n Sub Total:                  {subTotal}\n Tax:                           {taxAmmount.ToString("0.00")}\n Total:                         {total}\n\n Tendered:                  {tendered.ToString("0.00")}\n Change:                     {change.ToString("0.00")}\n\n Have A Great Day!\n Thank you for shopping.";
+            receiptLabel.Text = $"         Drews Shoes\n\n order number 5760\n september 29, 2021\n\n Air Forces x{forces}            @{forcesPrice}";
+                Refresh();
+            Thread.Sleep(50);
+            receiptLabel.Text += $"\n Air Mags x{mags}              @{magsPrice}";
+            receiptLabel.Text += $"\n Jordan 4's x{jordans}           @{jordansPrice}";
+            Refresh();
+            Thread.Sleep(50);
+           receiptLabel.Text += $"\n\n Sub Total:                  {subTotal}";
+            Refresh();
+            Thread.Sleep(50);
+           receiptLabel.Text += $"\n Tax:                           {taxAmmount.ToString("0.00")}";
+            Refresh();
+            Thread.Sleep(50);
+          receiptLabel.Text +=  $"\n Total:                         {total}";
+            Refresh();
+            Thread.Sleep(50);
+             receiptLabel.Text += $"\n\n Tendered:                  {tendered.ToString("0.00")}";
+            Refresh();
+            Thread.Sleep(50);
+            receiptLabel.Text += $"\n Change:                     {change.ToString("0.00")}";
+            Refresh();
+            Thread.Sleep(50);
+               receiptLabel.Text += $"\n\n Have A Great Day!\n Thank you for shopping.";
             SoundPlayer receipt = new SoundPlayer(Properties.Resources._202531__kalisemorrison__cash_drawer_and_receipt);
             receipt.Play();
         }
